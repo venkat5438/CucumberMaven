@@ -26,9 +26,9 @@ public class GapStepDefiniton2 extends GapElements {
 
     @Given("^user navigate to main page$")
     public void user_navigate_to_main_page() throws Throwable {
-        //System.setProperty("webdriver.chrome.driver","E:\\chromedriver.exe");
-        //driver=new ChromeDriver();
-        driver=new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver","E:\\my softwares\\chintu\\CucumberMaven\\drivers\\chromedriver.exe");
+        driver=new ChromeDriver();
+        //driver=new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        // WebDriverWait wait=new WebDriverWait(driver,5);
         driver.get(PropHandlerz.fetchProp(AutoConstants.URL.GAURL));
