@@ -3,7 +3,16 @@ package TestRunner;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+import stepdef.GmailElements;
+
+import java.io.File;
+
 import org.junit.runner.RunWith;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
+import com.cucumber.listener.Reporter;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -15,7 +24,21 @@ import org.junit.runner.RunWith;
         // we wanna execute only 3 scenarios priority based.so, we need to mention tags above every scenario.
         // @smoke ..... @login.... @Sanity ...naming conventions are not standards
 )
-public class GmailRunner {
+public class GmailRunner extends AbstractTestNGCucumberTests {
+	@BeforeClass
+	public static void setup() {
+		System.setProperty("cucumberReportPath", "target/extentreport/TestExecution-" + GmailElements.GetDateTimeInYYYYMMDDHHMMSS() + ".html");
+		
+	}
+	
+	@AfterClass
+	public void teardown(){
+		Reporter.loadXMLConfig(new File("src/test/resources/extent-config.xml"));
+        Reporter.setSystemInfo("user", System.getProperty("user.name"));
+        Reporter.setSystemInfo("os", GmailElements.OS);
+        Reporter.setTestRunnerOutput("Sample test runner output message");
+	}
+	
 
 
 }
