@@ -9,6 +9,7 @@
 	<groupId>CucumberMaven</groupId>
 	<artifactId>CucumberMaven</artifactId>
 	<version>1.0-SNAPSHOT</version>
+<<<<<<< HEAD
 	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -44,10 +45,97 @@
 		</dependency>
 
 		<dependency>
+=======
+
+	<build>
+	  <plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+        	<testFailureIgnore>false</testFailureIgnore>
+        </configuration>
+    
+    </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      
+    </plugins>
+    
+  </build>
+  
+ <dependencies>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-java</artifactId>
+  		<version>1.2.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-core</artifactId>
+  		<version>1.2.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>gherkin</artifactId>
+  		<version>2.12.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-jvm-deps</artifactId>
+  		<version>1.0.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-java</artifactId>
+  		<version>3.4.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-picocontainer</artifactId>
+  		<version>1.2.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-testng</artifactId>
+  		<version>1.2.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-jvm</artifactId>
+  		<version>1.2.5</version>
+  		<type>pom</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.vimalselvam</groupId>
+  		<artifactId>cucumber-extentsreport</artifactId>
+  		<version>2.0.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.aventstack</groupId>
+  		<artifactId>extentreports</artifactId>
+  		<version>3.0.6</version>
+  	</dependency>
+	<dependency>
+	    <groupId>com.codeborne</groupId>
+		<artifactId>phantomjsdriver</artifactId>
+		<version>1.4.1</version>
+	</dependency>
+	<dependency>
+>>>>>>> 652813b2f957ec352fda9ad1da1464eeecae4efa
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>fluent-hc</artifactId>
 			<version>4.5.2</version>
 		</dependency>
+<<<<<<< HEAD
 </dependencies>
 
 <build>
@@ -75,4 +163,14 @@
 			</plugin>
 </plugins>
 	</build>
+=======
+	<dependency>
+    <groupId>com.github.detro.ghostdriver</groupId>
+    <artifactId>phantomjsdriver</artifactId>
+    <version>1.1.0</version>
+    </dependency>
+  </dependencies>
+	
+	
+>>>>>>> 652813b2f957ec352fda9ad1da1464eeecae4efa
 </project>
