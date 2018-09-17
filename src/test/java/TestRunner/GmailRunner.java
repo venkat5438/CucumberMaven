@@ -2,19 +2,9 @@ package TestRunner;
 
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-import stepdef.GmailElements;
 
-import java.io.File;
-
-import org.junit.runner.RunWith;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-
-import com.cucumber.listener.Reporter;
-
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class)//this is Junit test
 @CucumberOptions(
         features = "features", //this is the location of feature file
         monochrome = true, // this is used to set the console output is much readable
@@ -25,7 +15,7 @@ import com.cucumber.listener.Reporter;
         // @smoke ..... @login.... @Sanity ...naming conventions are not standards
 )
 public class GmailRunner extends AbstractTestNGCucumberTests {
-	@BeforeClass
+	/*@BeforeClass
 	public static void setup() {
 		System.setProperty("cucumberReportPath", "target/extentreport/TestExecution-" + GmailElements.GetDateTimeInYYYYMMDDHHMMSS() + ".html");
 		
@@ -38,7 +28,7 @@ public class GmailRunner extends AbstractTestNGCucumberTests {
         Reporter.setSystemInfo("os", GmailElements.OS);
         Reporter.setTestRunnerOutput("Sample test runner output message");
 	}
-	
+	*/
 
 
 }

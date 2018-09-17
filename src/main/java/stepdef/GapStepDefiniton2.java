@@ -1,24 +1,21 @@
 package stepdef;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import cucumber.runtime.Timeout;
-import org.junit.Assert;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import util.AutoConstants;
-import util.AutoUtils;
-import util.PropHandlerz;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import util.AutoConstants;
+import util.PropHandlerz;
 
 
 public class GapStepDefiniton2 extends GapElements {
@@ -71,6 +68,7 @@ public class GapStepDefiniton2 extends GapElements {
     @When("^capture all the categories names$")public void capture_all_the_categories_names() throws Throwable {
         WebElement jeans;
         WebDriverWait wait1=new WebDriverWait(driver,20);
+
         jeans=wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='mainContent']//a[@href='/browse/category.do?cid=6998&departmentRedirect=true#pageId=0&department=75']")));
         jeans.click();
         //AutoUtils.captureScreenShot(driver,"clicked jeans tab");
